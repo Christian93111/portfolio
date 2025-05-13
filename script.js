@@ -1,20 +1,29 @@
 /* ========== Navbar ========== */
 
-const navbarToggle = document.querySelector('.navbar-toggle');
-const navbarMenu = document.querySelector('.navbar-menu');
-
-navbarToggle.addEventListener('click', () => {
-    navbarMenu.classList.toggle('active');
-    navbarToggle.classList.toggle('active');
-});
+class Navbar {
+  constructor() {
+    this.navbarToggle = document.querySelector('.navbar-toggle');
+    this.navbarMenu = document.querySelector('.navbar-menu');
+    
+    this.navbarToggle.addEventListener('click', () => {
+      this.navbarMenu.classList.toggle('active');
+      this.navbarToggle.classList.toggle("active");
+    });
+  }
+}
 
 /* ========== Scrolling Function & Auto Close Navbar ========== */
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+class ScrollToSection {
+  constructor() {
+    this.navbarMenu = document.querySelector('.navbar-menu');
+    this.navbarToggle = document.querySelector('.navbar-toggle');
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
         e.preventDefault();
 
-        const targetId = this.getAttribute('href').substring(1);
+        const targetId = anchor.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
 
         if (targetElement) {
@@ -25,10 +34,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
 
         if (window.innerWidth <= 800) {
-          navbarMenu.classList.remove('active');
-          navbarToggle.classList.remove('active');
+          this.navbarMenu.classList.remove('active');
+          this.navbarToggle.classList.remove('active');
         }
+      });
     });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  new Navbar();
+  new ScrollToSection();
 });
 
 /* ========== Link Functions if Desktop or Mobile ========== */
@@ -68,3 +84,14 @@ document.getElementById('facebook').addEventListener('click', function(e) {
     e.preventDefault();
     openAppOrWeb('fb://profile/100019100501787', 'https://www.facebook.com/CDR9311');
 });
+
+// function darkMode() {
+//   const toggle = document.getElementById('light-mode');
+//   const body = document.body;
+
+//   toggle.addEventListener('click', () => {
+//     body.classList.toggle('light-mode');
+//   });
+// }
+
+// darkMode();
