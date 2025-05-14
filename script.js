@@ -4,7 +4,7 @@ class Navbar {
   constructor() {
     this.navbarToggle = document.querySelector('.navbar-toggle');
     this.navbarMenu = document.querySelector('.navbar-menu');
-    
+
     this.navbarToggle.addEventListener('click', () => {
       this.navbarMenu.classList.toggle('active');
       this.navbarToggle.classList.toggle("active");
@@ -26,10 +26,22 @@ class ScrollToSection {
         const targetId = anchor.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
 
+/* ========== In case the smooth scroll won't work properly ========== */
+
+        // if (targetElement) {
+        //   window.scrollTo({
+        //     top: targetElement.offsetTop - 80,
+        //     behavior: 'smooth'
+        //   });
+        // }
+
+/* ==================================================================== */
+
         if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest'
           });
         }
 
@@ -41,11 +53,6 @@ class ScrollToSection {
     });
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  new Navbar();
-  new ScrollToSection();
-});
 
 /* ========== Link Functions if Desktop or Mobile ========== */
 
@@ -85,13 +92,89 @@ document.getElementById('facebook').addEventListener('click', function(e) {
     openAppOrWeb('fb://profile/100019100501787', 'https://www.facebook.com/CDR9311');
 });
 
-// function darkMode() {
-//   const toggle = document.getElementById('light-mode');
-//   const body = document.body;
+/* ========== Light Mode Function ========== */
 
-//   toggle.addEventListener('click', () => {
-//     body.classList.toggle('light-mode');
-//   });
-// }
+class lightMode {
+  constructor() {
+    this.toggle = document.getElementById('light-mode');
+    this.body = document.body;
+    this.navbar = document.querySelector('.navbar');
+    this.navbarLogo = document.querySelector('.navbar-logo');
+    this.navbarContainer = document.querySelector('.navbar-container');
+    this.navbarMenu = document.querySelector('.navbar-menu');
+    this.navbarBar = document.querySelectorAll('span.bar');
+    this.navbarToggle = document.querySelectorAll('.navbar-toggle');
+    this.comment = document.querySelector('.comment');
+    this.type = document.querySelectorAll('.type');
+    this.description = document.querySelectorAll('.description');
+    this.brace = document.querySelectorAll('.braces');
+    this.comma = document.querySelectorAll('.comma');
+    this.about = document.querySelector('.about-section');
+    this.linkTitle = document.querySelector('.link-title');
+    this.projectTitle = document.querySelector('.project-title');
 
-// darkMode();
+    this.toggle.addEventListener('click', this.toggleLightMode.bind(this));
+    this.saveTheme();
+  }
+
+  toggleLightMode() {
+      this.body.classList.toggle('light-mode');
+      this.navbar.classList.toggle('navbar-light');
+      this.navbarLogo.classList.toggle('navbar-logo-light');
+      this.navbarContainer.classList.toggle('navbar-container-light');
+      this.navbarMenu.classList.toggle('navbar-menu-light');
+
+      this.navbarBar.forEach(bars => {
+          bars.classList.toggle('bar-light');
+      });
+
+      this.comment.classList.toggle('comment-light');
+
+      this.type.forEach(types => {
+          types.classList.toggle('type-light');
+      });
+
+      this.description.forEach(descriptions => {
+          descriptions.classList.toggle('description-light');
+      });
+
+      this.brace.forEach(braces => {
+          braces.classList.toggle('braces-light');
+      });
+
+      this.comma.forEach(commas => {
+          commas.classList.toggle('comma-light');
+      });
+
+      this.about.classList.toggle('about-section-light');
+      this.linkTitle.classList.toggle('link-title-light');
+      this.projectTitle.classList.toggle('project-title-light');
+
+      const lightMode = this.body.classList.contains('light-mode');
+      if (lightMode) {
+        localStorage.setItem('theme', 'light');
+      }
+      else {
+        localStorage.setItem('theme', 'light');
+      }
+  }
+
+  saveTheme() {
+    const saveTheme = localStorage.getItem('theme');
+
+    if (saveTheme === 'light') {
+      this.toggle.checked = true;
+      this.toggleLightMode();
+    }
+
+    else {
+      this.toggle.checked = false;
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  new Navbar();
+  new ScrollToSection();
+  new lightMode();
+});

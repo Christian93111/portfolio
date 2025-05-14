@@ -2,16 +2,16 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	scroll-behavior: smooth;
 }
 
-body {
+html, body {
 	font-family: "Jost", sans-serif;
 	min-height: 100vh;
 	background-color: rgb(40, 40, 40);
+	scroll-behavior: smooth;
 }
 
-/* ==================== Main ==================== */
+/* ==================== Navbar ==================== */
 
 .navbar {
 	display: flex;
@@ -87,15 +87,19 @@ body {
 	width: 25px;
 	height: 3px;
 	margin: 5px auto;
-	background-color: #fff;
+	background-color: #ffffff;
 	transition: all 0.3s ease-in-out;
 }
 
-/* .ui-switch {
+/* ========== This code is not mine ========== */
+
+.ui-switch {
+/* ========== Switch ========== */
 	--switch-bg: rgb(135, 150, 165);
 	--switch-width: 60px;
 	--switch-height: 20px;
-
+	
+/* ========== Circle ========== */
 	--circle-diameter: 32px;
 	--circle-bg: rgb(50, 50, 50);
 	--circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
@@ -156,6 +160,8 @@ body {
 	opacity: 0;
 }
 
+/* ========== Actions ========== */
+
 .ui-switch input:checked+.slider .circle {
 	left: calc(100% - var(--circle-diameter));
 	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTkuMzA1IDEuNjY3VjMuNzVoMS4zODlWMS42NjdoLTEuMzl6bS00LjcwNyAxLjk1bC0uOTgyLjk4Mkw1LjA5IDYuMDcybC45ODItLjk4Mi0xLjQ3My0xLjQ3M3ptMTAuODAyIDBMMTMuOTI3IDUuMDlsLjk4Mi45ODIgMS40NzMtMS40NzMtLjk4Mi0uOTgyek0xMCA1LjEzOWE0Ljg3MiA0Ljg3MiAwIDAwLTQuODYyIDQuODZBNC44NzIgNC44NzIgMCAwMDEwIDE0Ljg2MiA0Ljg3MiA0Ljg3MiAwIDAwMTQuODYgMTAgNC44NzIgNC44NzIgMCAwMDEwIDUuMTM5em0wIDEuMzg5QTMuNDYyIDMuNDYyIDAgMDExMy40NzEgMTBhMy40NjIgMy40NjIgMCAwMS0zLjQ3MyAzLjQ3MkEzLjQ2MiAzLjQ2MiAwIDAxNi41MjcgMTAgMy40NjIgMy40NjIgMCAwMTEwIDYuNTI4ek0xLjY2NSA5LjMwNXYxLjM5aDIuMDgzdi0xLjM5SDEuNjY2em0xNC41ODMgMHYxLjM5aDIuMDg0di0xLjM5aC0yLjA4NHpNNS4wOSAxMy45MjhMMy42MTYgMTUuNGwuOTgyLjk4MiAxLjQ3My0xLjQ3My0uOTgyLS45ODJ6bTkuODIgMGwtLjk4Mi45ODIgMS40NzMgMS40NzMuOTgyLS45ODItMS40NzMtMS40NzN6TTkuMzA1IDE2LjI1djIuMDgzaDEuMzg5VjE2LjI1aC0xLjM5eiIgLz4KPC9zdmc+");
@@ -168,7 +174,9 @@ body {
 	opacity: 1;
 	width: 0;
 	height: 0;
-} */
+}
+
+/* ============================== */
 
 @media screen and (max-width: 880px) {
 	.navbar-container .navbar-menu {
@@ -193,6 +201,7 @@ body {
 
 	.navbar-toggle:hover {
 		background-color: #000000;
+		color: #ffffff;
 	}
 
 	.bar {
@@ -217,9 +226,9 @@ body {
 		margin-left: 15px;
 	}
 
-	/* .slider {
+	.slider {
 		margin-left: 15px;
-	} */
+	}
 }
 
 /* ==================== Profile Section ==================== */
@@ -478,7 +487,7 @@ main {
 
 /* ==================== Light Mode ==================== */
 
-/* .light-mode {
+.light-mode {
 	background-color: #EFEFEF;
 }
 
@@ -490,20 +499,61 @@ main {
 	color: #000000;
 }
 
-.navbar-logo-light:hover {
-	background-color: #EFEFEF;
-	color: #000000;
-}
-
 .navbar-container-light .navbar-menu-light li a {
 	color: #000000;
 }
 
-.navbar-container-light .navbar-menu-light li a:hover {
-	background-color: #000000;
-	color: #ffffff;
-}
-
 .bar-light {
 	background-color: #000000;
-} */
+}
+
+@media screen and (max-width: 880px) {
+	.navbar-container-light .navbar-menu-light {
+		background-color: #EFEFEF;
+	}
+
+	body.light-mode .navbar-toggle:hover {
+		background-color: #000000;
+	}
+
+	body.light-mode .navbar-toggle:hover .bar {
+		background-color: #EFEFEF;
+	}
+
+	body.light-mode .navbar-toggle.active:hover {
+		background-color: #000000;
+	}
+
+	body.light-mode .navbar-toggle.active:hover .bar {
+		background-color: #EFEFEF;
+	}
+}
+
+.comment-light {
+	color: #289e28;
+	margin-bottom: 5px;
+}
+
+.type-light {
+	color: #32beec;
+}
+
+.description-light {
+	color: #ca663f;
+}
+
+.braces-light, .comma-light {
+	color: #000000;
+}
+
+.about-section-light {
+	color: black;
+}
+
+.link-title-light {
+	color: black;
+}
+
+.project-title-light {
+	color: #000000;
+}
