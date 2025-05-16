@@ -253,8 +253,8 @@ main {
 }
 
 .profile-image img {
-	width: 150px;
-	height: 100%;
+	width: 200px;
+	height: auto;
 	border-radius: 50%;
 	object-fit: cover;
 }
@@ -307,8 +307,8 @@ main {
 	}
 	
 	.profile-image img {
-		width: 100px;
-		height: 100%;
+		width: 150px;
+		height: auto;
 	}
 }
 
