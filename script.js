@@ -1,16 +1,12 @@
 /* ========== Navbar ========== */
 
-class Navbar {
-  constructor() {
-    this.navbarToggle = document.querySelector('.navbar-toggle');
-    this.navbarMenu = document.querySelector('.navbar-menu');
+navbarToggle = document.querySelector('.navbar-toggle');
+navbarMenu = document.querySelector('.navbar-menu');
 
-    this.navbarToggle.addEventListener('click', () => {
-      this.navbarMenu.classList.toggle('active');
-      this.navbarToggle.classList.toggle("active");
-    });
-  }
-}
+navbarToggle.addEventListener('click', () => {
+  navbarMenu.classList.toggle('active');
+  navbarToggle.classList.toggle("active");
+});
 
 /* ========== Scrolling Function & Auto Close Navbar ========== */
 
@@ -96,8 +92,8 @@ document.getElementById('facebook').addEventListener('click', function(e) {
 
 class lightMode {
   constructor() {
-    this.toggle = document.getElementById('light-mode');
     this.body = document.body;
+    this.toggle = document.getElementById('light-mode');
     this.navbar = document.querySelector('.navbar');
     this.navbarLogo = document.querySelector('.navbar-logo');
     this.navbarContainer = document.querySelector('.navbar-container');
@@ -112,6 +108,9 @@ class lightMode {
     this.about = document.querySelector('.about-section');
     this.linkTitle = document.querySelector('.link-title');
     this.projectTitle = document.querySelector('.project-title');
+    this.contactSection = document.querySelector('.contact-section');
+    this.inputFields = document.querySelectorAll('input, textarea');
+    this.contactSubmit = document.querySelector('.contact-submit');
 
     this.toggle.addEventListener('click', this.toggleLightMode.bind(this));
     this.saveTheme();
@@ -157,6 +156,12 @@ class lightMode {
       else {
         localStorage.setItem('theme', 'dark');
       }
+
+      this.contactSection.classList.toggle('contact-section-light');
+      this.inputFields.forEach(input => {
+        input.classList.toggle('input-light');
+      });
+      this.contactSubmit.classList.toggle('contact-submit-light');
   }
 
   saveTheme() {
@@ -174,7 +179,6 @@ class lightMode {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  new Navbar();
   new ScrollToSection();
   new lightMode();
 });

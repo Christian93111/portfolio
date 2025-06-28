@@ -488,6 +488,63 @@ main {
 	transform: scale(1.1);
 }
 
+/* ==================== Contact Section ==================== */
+
+.contact-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 100px;
+	color: white;
+	text-align: center;
+}
+
+input, textarea {
+	background-color: rgb(155, 155, 155);
+	width: 90%;
+	padding: 15px;
+	border: none;
+	margin-top: 10px;
+	border-radius: 10px;
+	font-size: 100%;
+}
+
+input:hover, textarea:hover {
+	background-color: rgb(100, 100, 100);
+}
+
+textarea {
+	height: 500px;
+	resize: none;
+	font-size: 100%;
+	font-family: "Jost", sans-serif;
+}
+
+input::placeholder , textarea::placeholder {
+	color: black;
+}
+
+.contact-description {
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.contact-submit {
+	margin-top: 30px;
+	border: none;
+	background-color: rgb(155, 155, 155);
+	padding: 10px;
+	font-size: 100%;
+	border-radius: 10px;
+	width: 90%;
+	margin-bottom: 50px;
+}
+
+.contact-submit:hover {
+	background-color: rgb(100, 100, 100);
+}
+
 /* ==================== Light Mode ==================== */
 
 .light-mode {
@@ -559,4 +616,30 @@ main {
 
 .project-title-light {
 	color: #000000;
+}
+
+.contact-section-light {
+	color: black;
+}
+
+.input-light {
+	background-color: rgb(50, 50, 50);
+	border: none;
+	padding: 15px;
+	margin-top: 10px;
+	border-radius: 10px;
+	font-size: 100%;
+}
+
+.input-light::placeholder, .textarea-light::placeholder {
+	color: white;
+}
+
+.contact-submit-light {
+	background-color: rgb(50, 50, 50);
+	color: white;
+}
+
+.input-light[type="text"], .input-light[type="email"], .textarea-light {
+	color: white;
 }

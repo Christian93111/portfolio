@@ -19,13 +19,13 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="/img/temp_image.jpg">
     <meta property="og:image:type" content="image/jpeg">
-    <meta name="theme-color" content="#282828">
+    <meta name="theme-color" content="#ffffff">
     <meta name="twitter:description" content="Simple personal website">
     <meta name="twitter:image" content="/img/temp_image.jpg">
-    <title>Christian</title>
-    <link rel="shortcut icon" href="img/image.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="img/temp_image.jpg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <title>Christian</title>
 </head>
 <body>
     <nav class="navbar">
@@ -43,6 +43,7 @@
                   <li><a href="#about">About</a></li>
                   <li><a href="#links">Links</a></li>
                   <li><a href="#projects">Projects</a></li>
+                  <li><a href="#contact">Contact</a></li>
 
                   <label class="ui-switch">
                     <input type="checkbox" id="light-mode">
@@ -57,7 +58,7 @@
     <main data-aos="fade-up">
         <section class="profile-section" id="home">
             <div class="profile-image">
-                <img src="img/profile.png" alt="profile_logo">
+                <img src="img/temp_image.jpg" alt="profile_logo">
             </div>
 
             <div class="profile-data">
@@ -150,6 +151,18 @@
             <button type="button" class="card-button-project" onclick="window.open('https://github.com/Christian93111/Hotel-Reservation-System', '_blank')">Visit</button>
           </div>
       </div>
+    </section>
+
+    <section data-aos="fade-up" class="contact-section" id="contact">
+      <h1>Contact Me</h1>
+      <p class="contact-description">Feel free to contact me with any inquiries or questions</p>
+
+      <form method="post">
+        <input type="text" id="name" name="name" placeholder="Name" required>
+        <input type="text" id="email" name="email" placeholder="Email" required>
+        <textarea name="message" id="message" placeholder="Message" required></textarea>
+        <button type="submit" class="contact-submit" id="submit">Submit</button>
+      </form>
     </section>
 
     <script src="script.js"></script>
