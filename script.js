@@ -129,6 +129,21 @@ document.getElementById('tiktok').addEventListener('click', function(e) {
   openAppOrWeb('tiktok://user/@cdr9311','https://www.tiktok.com/@cdr9311');
 });
 
+document.getElementById('tryhackme').addEventListener('click', function(e) {
+  e.preventDefault();
+  openAppOrWeb('https://tryhackme.com/p/hack4gov003','https://tryhackme.com/p/hack4gov003');
+});
+
+document.getElementById('picoctf').addEventListener('click', function(e) {
+  e.preventDefault();
+  openAppOrWeb('https://play.picoctf.org/users/FanAndreas','https://play.picoctf.org/users/FanAndreas');
+});
+
+document.getElementById('ctflearn').addEventListener('click', function(e) {
+  e.preventDefault();
+  openAppOrWeb('https://ctflearn.com/user/Fan2K','https://ctflearn.com/user/Fan2K');
+});
+
 /* ========== Light Mode Function ========== */
 
 class lightMode {
