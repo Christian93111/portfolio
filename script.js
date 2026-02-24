@@ -203,6 +203,9 @@ const COMMANDS = {
       { text: '  cat <file> -    Read a file', type: 'accent' },
       { text: '  ping <host> -   Ping a host', type: 'accent' },
       { text: '  date       -    Show current date', type: 'accent' },
+      { text: '  pwd        -    Print working directory', type: 'accent' },
+      { text: '  cd <dir>   -    Change directory', type: 'accent' },
+      { text: '  rm <file>  -    Remove a file', type: 'accent' },
       { text: '  uname      -    System info', type: 'accent' },
       { text: '  echo <text> -    Print text', type: 'accent' },
       { text: '  history    -    Command history', type: 'accent' },
@@ -430,20 +433,20 @@ function processCommand(input) {
   if (cmd === 'rm') {
     return [
       { text: '  rm: permission denied. This is a read-only filesystem!', type: 'warn' },
-      { text: '  Nice try though 😈', type: 'warn' },
+      { text: '  Nice try though', type: 'warn' },
     ];
   }
 
   // cd command
   if (cmd === 'cd') {
     return [
-      { text: '  You\'re already where you need to be. 🏠', type: 'accent' },
+      { text: '  You\'re already where you need to be.', type: 'accent' },
     ];
   }
 
   // pwd command
   if (cmd === 'pwd') {
-    return [{ text: '  /home/guest/fan2k-portfolio', type: 'accent' }];
+    return [{ text: '  /home/guest/portfolio', type: 'accent' }];
   }
 
   // built-in commands
