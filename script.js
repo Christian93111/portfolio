@@ -183,6 +183,11 @@ document.getElementById('rootme').addEventListener('click', function (e) {
   openAppOrWeb('https://www.root-me.org/Fan2K?lang=en', 'https://www.root-me.org/Fan2K?lang=en');
 });
 
+document.getElementById('ctfzone').addEventListener('click', function (e) {
+  e.preventDefault();
+  openAppOrWeb('https://app.ctfzone.com/hacker/15175', 'https://app.ctfzone.com/hacker/15175');
+});
+
 /* ========== Interactive Linux Terminal ========== */
 
 const terminalOutput = document.getElementById('terminal-output');
